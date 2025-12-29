@@ -1,5 +1,8 @@
 # Bank Customer Churn Prediction
 
+## Data Source
+The dataset used in this project was obtained from Kaggle and is used for educational and portfolio purposes only.
+
 This project focuses on predicting customer churn using a structured machine learning pipeline, combining exploratory data analysis and supervised learning models. The objective is to identify customers at higher risk of leaving the bank and to understand the main factors driving churn.
 
 ## Dataset
