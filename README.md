@@ -1,49 +1,41 @@
 # Bank Customer Churn Prediction
 
-## Project Description
-This project aims to analyze and predict customer churn in the banking sector using machine learning techniques.  
-Customer churn occurs when a client ends their relationship with the bank, leading to revenue loss and increased customer acquisition costs.
-
-The project follows an end-to-end data science workflow, starting with exploratory data analysis (EDA) and progressing toward predictive modeling, with a strong focus on business understanding.
-
----
-
-## Objective
-- Identify patterns and factors associated with customer churn  
-- Build models to predict which customers are more likely to leave the bank  
-- Support proactive customer retention strategies  
-
----
+This project focuses on predicting customer churn using a structured machine learning pipeline, combining exploratory data analysis and supervised learning models. The objective is to identify customers at higher risk of leaving the bank and to understand the main factors driving churn.
 
 ## Dataset
-- Source: Kaggle  
-- Name: Bank Customer Churn Records  
-- Size: 10,000 records  
-- Features: 18 variables  
-- Target variable: `Exited`  
-  - 0 = Customer stayed  
-  - 1 = Customer churned  
-
-The dataset contains no missing values and includes numerical, binary, and categorical features.
-
----
+The dataset was obtained from Kaggle and contains information about bank customers, including demographic, financial, and behavioral attributes.  
+The target variable is **Exited**, where:
+- 1 indicates the customer churned
+- 0 indicates the customer remained with the bank
 
 ## Exploratory Data Analysis (EDA)
-The initial exploratory analysis included:
-- Dataset size and structure inspection  
-- Data type verification  
-- Missing value analysis  
-- Descriptive statistics for numerical variables  
-- Identification of non-predictive columns  
+A comprehensive exploratory analysis was conducted before model training. The analysis included:
+- Distribution and statistical overview of numerical variables
+- Churn analysis by age, geography, gender, and activity status
+- Bidimensional analysis to evaluate combined effects of key variables (e.g., Age × Geography, Age × Activity)
 
-### Key findings
-- Around 20% of customers have churned  
-- The dataset presents moderate class imbalance, common in real-world churn problems  
-- Columns such as `RowNumber`, `CustomerId`, and `Surname` are identifiers and should not be used for modeling  
-- Features related to customer activity, complaints, and satisfaction show strong predictive potential  
+This analysis revealed strong and consistent churn patterns, particularly higher churn rates among customers aged 51–60 and customers located in Germany.
 
----
-## Author
-Cibele Vieira  
-Project developed for academic purposes and data science portfolio building.
+Variables that could cause data leakage were identified and removed to ensure realistic model performance.
 
+## Modeling Approach
+Two supervised learning models were trained and evaluated:
+
+- **Logistic Regression**: Used as a baseline model due to its simplicity and interpretability.
+- **Random Forest Classifier**: Used to capture non-linear relationships and interactions between features.
+
+## Model Evaluation
+Models were evaluated using multiple metrics, including:
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- Confusion Matrix
+
+While Logistic Regression provided a solid baseline, it showed low recall for churned customers. The Random Forest model significantly improved recall, precision, and F1-score, demonstrating a better ability to identify customers at risk of churn.
+
+## Results
+The Random Forest model outperformed Logistic Regression across all key metrics, making it the preferred model for this churn prediction task. Its ability to capture complex customer behavior makes it more suitable for real-world retention strategies.
+
+## Conclusion
+This project demonstrates the importance of combining exploratory data analysis with appropriate model selection. Understanding customer behavior prior to modeling proved essential for building a reliable and effective churn prediction model.
