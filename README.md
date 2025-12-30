@@ -42,6 +42,7 @@ The Random Forest model outperformed Logistic Regression across all key metrics,
 
 ## Conclusion
 This project demonstrates the importance of combining exploratory data analysis with appropriate model selection. Understanding customer behavior prior to modeling proved essential for building a reliable and effective churn prediction model.
+
 flowchart LR
     A[Base de Clientes] --> B[Job de Scoring]
     B --> C[Tabela de Churn Scores]
